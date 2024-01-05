@@ -83,7 +83,7 @@ public class ForceFieldListener {
             if (plot.isAdded(uuid)) {
                 Set<PlotPlayer> players = getNearbyPlayers(player, plot);
                 for (PlotPlayer oPlayer : players) {
-                    ((SpongePlayer) oPlayer).player.setVelocity(calculateVelocity(plotPlayer, oPlayer));
+                    ((SpongePlayer) oPlayer).player.get().setVelocity(calculateVelocity(plotPlayer, oPlayer));
                 }
             } else {
                 PlotPlayer oPlayer = hasNearbyPermitted(player, plot);

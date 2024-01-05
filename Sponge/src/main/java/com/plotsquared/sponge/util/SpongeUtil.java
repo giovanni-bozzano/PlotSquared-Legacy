@@ -145,7 +145,7 @@ public class SpongeUtil extends WorldUtil {
     }
 
     public static Location getLocationFull(Entity player) {
-        String world = player.getWorld().getName();
+        String world = player.getWorld().getUniqueId().toString();
         Vector3d rot = player.getRotation();
         float[] pitchYaw = MathMan.getPitchAndYaw((float) rot.getX(), (float) rot.getY(), (float) rot.getZ());
         org.spongepowered.api.world.Location loc = player.getLocation();
@@ -170,7 +170,7 @@ public class SpongeUtil extends WorldUtil {
 
     public static Player getPlayer(PlotPlayer player) {
         if (player instanceof SpongePlayer) {
-            return ((SpongePlayer) player).player;
+            return ((SpongePlayer) player).player.get();
         }
         return null;
     }
